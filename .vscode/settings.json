@@ -1,0 +1,8 @@
+{
+    "dotnet.defaultSolution": "sk-demo/sk-csharp-chatgpt-plugin/sk-csharp-chatgpt-plugin.sln",
+    "azureFunctions.deploySubpath": "sk-demo\\sk-csharp-chatgpt-plugin\\azure-function/bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)"
+}
