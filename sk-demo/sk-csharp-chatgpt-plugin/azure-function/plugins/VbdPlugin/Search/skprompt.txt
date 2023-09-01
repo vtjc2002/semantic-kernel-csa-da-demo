@@ -1,0 +1,9 @@
+[History]
+{{VbdPlugin.Get $history}}
+
+User: {{$input}}
+
+------------------------------------------------------------------
+Find one best matching VBD workshop based on the user input.
+
+
