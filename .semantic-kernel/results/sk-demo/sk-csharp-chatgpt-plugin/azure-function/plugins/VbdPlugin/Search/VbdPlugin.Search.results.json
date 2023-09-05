@@ -1,0 +1,45 @@
+{
+    "version": "1.0",
+    "skillName": "VbdPlugin",
+    "functionName": "Search",
+    "description": "Find the matching VBD workshop that are available.",
+    "filePath": "sk-demo\\sk-csharp-chatgpt-plugin\\azure-function\\plugins\\VbdPlugin\\Search\\skprompt.txt",
+    "results": [
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 512,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "history",
+                    "value": ""
+                },
+                {
+                    "key": "input",
+                    "value": "what's a good workshop for java shop?"
+                }
+            ],
+            "output": {
+                "prompt": "[History]\r\n\nSummary:\nWorkshop - Modernizing Enterprise Apps with Java: This workshop provides an understanding of modernizing Java applications with Data for cloud native services on Azure. It provides hands-on learning experience of Java applications on Azure services and monitoring options for these solutions and operations.\n\nWorkshop - Modernizing Enterprise Apps with .NET: This workshop helps build and deliver digital capability and skilling plan to gain better insight into developing, implementing and managing next generation of cloud solutions. It provides a choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. to determine the recommended Workshop plan for the application modernizing journey.\r\n\r\nUser: what's a good workshop for java shop?\r\n\r\n------------------------------------------------------------------\r\nFind one best matching VBD workshop based on the user input.\r\n\r\n\r\n",
+                "durationInMilliseconds": 5651.3357,
+                "inputTokens": 168,
+                "outputTokens": 58,
+                "result": "The best workshop for a Java shop is the Modernizing Enterprise Apps with Java workshop. This workshop provides an understanding of modernizing Java applications with Data for cloud native services on Azure. It provides hands-on learning experience of Java applications on Azure services and monitoring options for these solutions and operations.",
+                "textCompletionResult": "The best workshop for a Java shop is the Modernizing Enterprise Apps with Java workshop. This workshop provides an understanding of modernizing Java applications with Data for cloud native services on Azure. It provides hands-on learning experience of Java applications on Azure services and monitoring options for these solutions and operations."
+            }
+        }
+    ]
+}

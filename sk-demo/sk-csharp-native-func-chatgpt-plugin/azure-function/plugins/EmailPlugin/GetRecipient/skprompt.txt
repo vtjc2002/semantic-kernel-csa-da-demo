@@ -1,0 +1,4 @@
+[INSTRUNCTIONS]
+Return the user's email from the {{$input}}.
+If the email in xxx@yyy.com format cannot be determined, ask the user to enter the email again.
+

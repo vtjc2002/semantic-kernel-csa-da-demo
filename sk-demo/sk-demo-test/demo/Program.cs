@@ -21,15 +21,18 @@ IKernel kernel = new KernelBuilder()
 // Add the math plugin using the plugin manifest URL
 const string pluginManifestUrl = "http://localhost:7071/.well-known/ai-plugin.json";
 var vbdFinderPlugin = await kernel.ImportChatGptPluginSkillFromUrlAsync("VbdFinderPlugin", new Uri(pluginManifestUrl));
+const string emailPluginManifestUrl = "http://localhost:7072/.well-known/ai-plugin.json";
+var emailPlugin = await kernel.ImportChatGptPluginSkillFromUrlAsync("EmailPlugin", new Uri(emailPluginManifestUrl));
 
 // the question
 var question = "my customer wants to modernize their .net application.  What's a good vbd workshop for my customer?  Please provide workshop info in details.";
+ 
 
 // Create a stepwise planner and invoke it
 var planner = new StepwisePlanner(kernel);
 
 var plan = planner.CreatePlan(question);
-var result = await plan.InvokeAsync(kernel.CreateNewContext());
+var result = await plan.InvokeAsync();
 
 // Print the results
 Console.WriteLine("Result: " + result.Result);

@@ -1,0 +1,73 @@
+{
+    "version": "1.0",
+    "skillName": "VbdPlugin",
+    "functionName": "Get",
+    "description": "Get all VBDs that are available.",
+    "filePath": "sk-demo\\sk-csharp-chatgpt-plugin\\azure-function\\plugins\\VbdPlugin\\Get\\skprompt.txt",
+    "results": [
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 800,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "long"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUCTIONS]\r\nSummarize each workshop in conversation history.  The summary should be long.\r\n\r\n[CONVERSATION HISTORY]\r\nWorkshop -  Modernizing Enterprise Apps with Java\r\n\r\nDescription\r\nThis engagement is designed to provide you an understanding of modernizing Java applications with Data for cloud native services on Azure. Microsoft personnel will help you to upskill and quickly get on course for managing Java applications built with different frameworks on to Azure services like App Service, Azure Kubernetes Service, Azure Spring Apps and more. This will provide you hands-on learning experience of Java applications on Azure services. Also provides you an experience on monitoring options for these solutions and operations.\r\n\r\nWorkshop -  Modernizing Enterprise Apps with .NET\r\n\r\nDescription\r\nThis engagement is designed to help you build and deliver your digital capability and skilling plan to help you gain better insight into developing, implementing and managing next generation of cloud solutions. The Microsoft personnel can help you pick one or more workshops to upskill and quickly get on course for your Modernization journey with choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. will determine the recommended Workshop plan for the application modernizing journey.\r\n\r\n[SUMMARY]\r\n\r\n",
+                "durationInMilliseconds": 4339.2985,
+                "inputTokens": 259,
+                "outputTokens": 164,
+                "result": "Workshop - Modernizing Enterprise Apps with Java: This workshop is designed to provide an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.\n\nWorkshop - Modernizing Enterprise Apps with .NET: This workshop is designed to help participants build and deliver their digital capability and skilling plan to help them gain better insight into developing, implementing and managing next generation of cloud solutions. Microsoft personnel will help participants pick one or more workshops to upskill and quickly get on course for their Modernization journey with choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. to determine the recommended Workshop plan for the application modernizing journey.",
+                "textCompletionResult": "Workshop - Modernizing Enterprise Apps with Java: This workshop is designed to provide an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.\n\nWorkshop - Modernizing Enterprise Apps with .NET: This workshop is designed to help participants build and deliver their digital capability and skilling plan to help them gain better insight into developing, implementing and managing next generation of cloud solutions. Microsoft personnel will help participants pick one or more workshops to upskill and quickly get on course for their Modernization journey with choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. to determine the recommended Workshop plan for the application modernizing journey."
+            }
+        },
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 800,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "short"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUCTIONS]\r\nSummarize each workshop in conversation history.  The summary should be short.\r\n\r\n[CONVERSATION HISTORY]\r\nWorkshop -  Modernizing Enterprise Apps with Java\r\n\r\nDescription\r\nThis engagement is designed to provide you an understanding of modernizing Java applications with Data for cloud native services on Azure. Microsoft personnel will help you to upskill and quickly get on course for managing Java applications built with different frameworks on to Azure services like App Service, Azure Kubernetes Service, Azure Spring Apps and more. This will provide you hands-on learning experience of Java applications on Azure services. Also provides you an experience on monitoring options for these solutions and operations.\r\n\r\nWorkshop -  Modernizing Enterprise Apps with .NET\r\n\r\nDescription\r\nThis engagement is designed to help you build and deliver your digital capability and skilling plan to help you gain better insight into developing, implementing and managing next generation of cloud solutions. The Microsoft personnel can help you pick one or more workshops to upskill and quickly get on course for your Modernization journey with choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. will determine the recommended Workshop plan for the application modernizing journey.\r\n\r\n[SUMMARY]\r\n\r\n",
+                "durationInMilliseconds": 2233.8673,
+                "inputTokens": 259,
+                "outputTokens": 47,
+                "result": "Modernizing Enterprise Apps with Java: Learn how to manage Java applications built with different frameworks on Azure services.\nModernizing Enterprise Apps with .NET: Gain insight into developing, implementing and managing next generation of cloud solutions with Azure services.",
+                "textCompletionResult": "Modernizing Enterprise Apps with Java: Learn how to manage Java applications built with different frameworks on Azure services.\nModernizing Enterprise Apps with .NET: Gain insight into developing, implementing and managing next generation of cloud solutions with Azure services."
+            }
+        }
+    ]
+}

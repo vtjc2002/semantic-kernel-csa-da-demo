@@ -1,6 +1,7 @@
 # Semantic Kernel ChatGPT plugin starter
 
 This project provides starter code to create a ChatGPT plugin. It includes the following components:
+
 - An endpoint that serves up an ai-plugin.json file for ChatGPT to discover the plugin
 - A generator that automatically converts prompts into semantic function endpoints
 - The ability to add additional native functions as endpoints to the plugin
@@ -23,7 +24,6 @@ To configure the starter, you need to provide the following information:
 - Enter the API key for your AI endpoint in the [local.settings.json](./azure-function/local.settings.json) file.
 
 For Debugging the console application alone, we suggest using .NET [Secret Manager](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to avoid the risk of leaking secrets into the repository, branches and pull requests.
-
 
 ### Using appsettings.json
 
@@ -56,7 +56,3 @@ dotnet build
 cd bin/Debug/net6.0
 func host start  
 ```
-
-## Learning
-1. sk function must have an input or the planner doesn't kow what to do and eventually run out of token.
-1. the name of the plugin cannot be the same even in different folder.  For example, BookPlugin/GetAll and AuthorPlugin/GetALL will produce an error during runtime.  Probably better off with 2 completely separate plugins.

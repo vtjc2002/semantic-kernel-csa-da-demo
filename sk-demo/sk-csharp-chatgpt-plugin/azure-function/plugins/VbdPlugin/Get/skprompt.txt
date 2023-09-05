@@ -11,6 +11,3 @@ Workshop -  Modernizing Enterprise Apps with .NET
 
 Description
 This engagement is designed to help you build and deliver your digital capability and skilling plan to help you gain better insight into developing, implementing and managing next generation of cloud solutions. The Microsoft personnel can help you pick one or more workshops to upskill and quickly get on course for your Modernization journey with choice of Azure services like API Management, App Service Environment, Azure Container apps, monitoring etc. will determine the recommended Workshop plan for the application modernizing journey.
-
-[SUMMARY]
-

@@ -4,6 +4,7 @@
 User: {{$input}}
 
 ------------------------------------------------------------------
+[INSTRUCTIONS]
 Find one best matching VBD workshop based on the user input.
 
 

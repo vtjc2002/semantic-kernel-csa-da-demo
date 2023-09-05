@@ -1,0 +1,41 @@
+{
+    "version": "1.0",
+    "skillName": "SummarizePlugin",
+    "functionName": "Summarize",
+    "description": "Summarize given text or any text document",
+    "filePath": "sk-demo\\sk-csharp-chatgpt-plugin\\azure-function\\plugins\\SummarizePlugin\\Summarize\\skprompt.txt",
+    "results": [
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 512,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "Workshop - Modernizing Enterprise Apps with Java: This workshop is designed to provide an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations."
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUCTIONS]\r\nSummarize the following conversation in 2-3 sentences. After summarizing, create a [LAST 3 MESSAGES] section that copy and pastes last 3 messages.\r\n\r\n[CONVERSATION HISTORY]\r\nWorkshop - Modernizing Enterprise Apps with Java: This workshop is designed to provide an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.\r\n\r\n[SUMMARY]",
+                "durationInMilliseconds": 3503.3364,
+                "inputTokens": 121,
+                "outputTokens": 89,
+                "result": "\nThis workshop provides an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.\n\n[LAST 3 MESSAGES]\nParticipants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.",
+                "textCompletionResult": "\nThis workshop provides an understanding of modernizing Java applications with Data for cloud native services on Azure. Participants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations.\n\n[LAST 3 MESSAGES]\nParticipants will gain hands-on learning experience of Java applications on Azure services, as well as experience on monitoring options for these solutions and operations."
+            }
+        }
+    ]
+}

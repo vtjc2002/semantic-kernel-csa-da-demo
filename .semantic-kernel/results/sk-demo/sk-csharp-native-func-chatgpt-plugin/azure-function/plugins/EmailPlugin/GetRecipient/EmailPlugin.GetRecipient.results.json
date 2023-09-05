@@ -1,0 +1,169 @@
+{
+    "version": "1.0",
+    "skillName": "EmailPlugin",
+    "functionName": "GetRecipient",
+    "description": "Get recipient email ",
+    "filePath": "sk-demo\\sk-csharp-native-func-chatgpt-plugin\\azure-function\\plugins\\EmailPlugin\\GetRecipient\\skprompt.txt",
+    "results": [
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 200,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "her email is jack@npr.org"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUNCTIONS]\nReturn the user's email from the her email is jack@npr.org.\nIf the email in xxx@yyy.com format cannot be determined, ask the user to enter the email again.\n\n",
+                "durationInMilliseconds": 1134.6004,
+                "inputTokens": 52,
+                "outputTokens": 7,
+                "result": "\njack@npr.org",
+                "textCompletionResult": "\njack@npr.org"
+            }
+        },
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 200,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "Johnson TSeng <johnsontseng@microsoft.com>"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUNCTIONS]\nReturn the user's email from the Johnson TSeng <johnsontseng@microsoft.com>.\nIf the email in xxx@yyy.com format cannot be determined, ask the user to enter the email again.\n\n",
+                "durationInMilliseconds": 1130.6805,
+                "inputTokens": 56,
+                "outputTokens": 10,
+                "result": "\njohnsontseng@microsoft.com",
+                "textCompletionResult": "\njohnsontseng@microsoft.com"
+            }
+        },
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 200,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "I like summer but not the head"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUNCTIONS]\nReturn the user's email from the I like summer but not the head.\nIf the email in xxx@yyy.com format cannot be determined, ask the user to enter the email again.\n\n",
+                "durationInMilliseconds": 1423.2404,
+                "inputTokens": 50,
+                "outputTokens": 26,
+                "result": "\nSorry, I cannot determine your email from that statement. Please enter your email in xxx@yyy.com format.",
+                "textCompletionResult": "\nSorry, I cannot determine your email from that statement. Please enter your email in xxx@yyy.com format."
+            }
+        },
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 200,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "what's your email address?"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUNCTIONS]\nReturn the user's email from the what's your email address?\n",
+                "durationInMilliseconds": 1749.6863,
+                "inputTokens": 22,
+                "outputTokens": 9,
+                "result": "\nAnswer: <user's email address>",
+                "textCompletionResult": "\nAnswer: <user's email address>"
+            }
+        },
+        {
+            "completionConfig": {
+                "label": "text-davinci-003",
+                "aiService": "AzureOpenAI",
+                "deploymentOrModelId": "text-davinci-003",
+                "endpoint": "https://aoaijohnsontest.openai.azure.com/",
+                "useCustomEndpoint": false,
+                "endpointType": "text-completion"
+            },
+            "requestSettings": {
+                "temperature": 0,
+                "topP": 0,
+                "presencePenalty": 0,
+                "frequencyPenalty": 0,
+                "maxTokens": 200,
+                "stopSequences": []
+            },
+            "variables": [
+                {
+                    "key": "input",
+                    "value": "jack smith at the doj"
+                }
+            ],
+            "output": {
+                "prompt": "[INSTRUNCTIONS]\nReturn the user's email from the jack smith at the doj\n",
+                "durationInMilliseconds": 1214.9466,
+                "inputTokens": 23,
+                "outputTokens": 9,
+                "result": "\njack.smith@doj.gov",
+                "textCompletionResult": "\njack.smith@doj.gov"
+            }
+        }
+    ]
+}

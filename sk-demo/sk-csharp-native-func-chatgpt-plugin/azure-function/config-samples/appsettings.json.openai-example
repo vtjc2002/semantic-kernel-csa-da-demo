@@ -3,15 +3,14 @@
     "serviceType": "OpenAI",
     "serviceId": "gpt-3.5-turbo",
     "deploymentOrModelId": "gpt-3.5-turbo",
-    "endpoint": "https://aoaijohnsontest.openai.azure.com/",
-    "orgId": "16b3c013-d300-468d-ac64-7eda0820b6d3"
+    "orgId": ""
   },
   "aiPlugin": {
     "schemaVersion": "v1",
-    "nameForModel": "VbdFinderPlugin",
-    "nameForHuman": "Vbd Finder Plugin",
-    "descriptionForModel": "Find the best VBD in a given text",
-    "descriptionForHuman": "Find the best VBD from the descrption",
+    "nameForModel": "MyPlugin",
+    "nameForHuman": "My Plugin",
+    "descriptionForModel": "<Instructions for the model>",
+    "descriptionForHuman": "<Description for users>",
     "auth": {
       "type": "none"
     },
