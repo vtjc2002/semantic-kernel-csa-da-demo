@@ -60,3 +60,5 @@ func host start
 ## Learning
 1. sk function must have an input or the planner doesn't kow what to do and eventually run out of token.
 1. the name of the plugin cannot be the same even in different folder.  For example, BookPlugin/GetAll and AuthorPlugin/GetALL will produce an error during runtime.  Probably better off with 2 completely separate plugins.
+1. use SK VS extension to help test semantic function.
+1. you should always have 'input' field for the sk and native function for plugins to be called.

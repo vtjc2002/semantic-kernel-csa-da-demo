@@ -3,13 +3,16 @@ using Azure.Communication.Email;
 
 using Models;
 
-using Microsoft.SemanticKernel.SkillDefinition;
-using Microsoft.SemanticKernel.Orchestration;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Logging;
 
 using System.ComponentModel;
 using System.Globalization;
+using System.Net;
+
 
 
 namespace Plugins.SendMailPlugin;
@@ -17,35 +20,38 @@ namespace Plugins.SendMailPlugin;
 public class Email
 {
     /// Sends an email to the specified recipient.
-    [SKFunction, Description("Sends an email to the specified recipient.")]
-    [SKParameter("recipient", "The email to send the message to.")]
-    [SKParameter("subject", "The subject of the email.")]
-    [SKParameter("body", "The body of the email.")]
-    [OpenApiOperation(operationId: "SendEmail", tags: new[] { "ExecuteFunction" }, Description = "Adds two numbers.")]
-    [OpenApiParameter(name: "number1", Description = "The first number to add", Required = true, In = ParameterLocation.Query)]
-    [OpenApiParameter(name: "number2", Description = "The second number to add", Required = true, In = ParameterLocation.Query)]
-    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "Returns the sum of the two numbers.")]
-    [OpenApiResponseWithBody(statusCode: HttpStatusCode.BadRequest, contentType: "application/json", bodyType: typeof(string), Description = "Returns the error of the input.")] 
-    public string SendEmail(SKContext context)
+    [Function("SendEmail")]
+    [OpenApiOperation(operationId: "SendEmail", tags: new[] { "ExecuteFunction" }, Description = "Sends an email to the specified recipient.")]
+    [OpenApiParameter(name: "input", Description = "The email to send the message to.", Required = true, In = ParameterLocation.Query)]
+    [OpenApiParameter(name: "subject", Description = "The subject of the email.", Required = true, In = ParameterLocation.Query)]
+    [OpenApiParameter(name: "body", Description = "The body of the email.", Required = true, In = ParameterLocation.Query)]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "Returns if the email was successfully sent.")]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.BadRequest, contentType: "application/json", bodyType: typeof(string), Description = "Returns the error of the input.")]
+    public HttpResponseData SendEmail([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
     {
         var appSettings = AppSettings.LoadSettings();
         var emailServiceConnectionString = appSettings.EmailServiceConnectionString;
 
-        var recipient = context.Variables["recipient"];
-        var subject = context.Variables["subject"];
-        var body = context.Variables["body"];
+        var recipient = req.Query["input"];
+        var subject = req.Query["subject"];
+        var body = req.Query["body"];
 
-        var emailClient = new EmailClient(emailServiceConnectionString); 
+        var emailClient = new EmailClient(emailServiceConnectionString);
 
         var result = emailClient.SendAsync(
             wait: Azure.WaitUntil.Completed,
-            senderAddress: "johnsontseng@microsoft.com",
+            senderAddress: "DoNotReply@0b2fc93b-542b-45e6-9919-d8fedfbf7cc4.azurecomm.net",
             recipientAddress: recipient,
-            subject: subject, 
+            subject: subject,
             htmlContent: body).Result;
 
-        return "send";
+        HttpResponseData response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "text/plain");
 
+        response.WriteString("Email sent successfully.");
         
+        return response;
+
+
     }
 }
