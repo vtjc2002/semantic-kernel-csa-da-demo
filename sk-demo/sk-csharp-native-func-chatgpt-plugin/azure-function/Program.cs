@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using Models;
 
-const string DefaultSemanticFunctionsFolder = "Prompts";
+const string DefaultSemanticFunctionsFolder = "plugins";
 string semanticFunctionsFolder = Environment.GetEnvironmentVariable("SEMANTIC_SKILLS_FOLDER") ?? DefaultSemanticFunctionsFolder;
 
 var host = new HostBuilder()

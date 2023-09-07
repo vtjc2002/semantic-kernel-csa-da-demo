@@ -14,6 +14,7 @@ public class AppSettings
 
     public KernelSettings Kernel { get; set; }
     public AIPluginSettings AIPlugin { get; set; }
+    public string EmailServiceConnectionString { get; set; }
 
     /// <summary>
     /// Load the kernel settings from settings.json if the file exists and if not attempt to use user secrets.
@@ -24,6 +25,7 @@ public class AppSettings
         {
             var appSettings = FromFile(DefaultConfigFile);
             appSettings.Kernel.ApiKey = GetApiKey();
+            appSettings.EmailServiceConnectionString = GetEmailServiceConnectionString();
 
             return appSettings;
         }
@@ -63,6 +65,15 @@ public class AppSettings
     {
         return System.Environment.GetEnvironmentVariable("apiKey", EnvironmentVariableTarget.Process)
                ?? throw new InvalidDataException("Invalid semantic kernel settings in user secrets, please provide configuration settings using instructions in the README.");
+    }
+
+    /// <summary>
+    /// Load the emailServiceConnectionString for the email service from user secrets.
+    /// </summary>
+    internal static string GetEmailServiceConnectionString()
+    {
+        return System.Environment.GetEnvironmentVariable("emailServiceConnectionString", EnvironmentVariableTarget.Process)
+               ?? throw new InvalidDataException("Invalid app settings in user secrets, please provide configuration settings using instructions in the README.");
     }
 }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
